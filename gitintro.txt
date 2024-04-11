@@ -1,0 +1,179 @@
+What Is Git?
+Git is a distributed version control system. It's known for its speed, efficiency, and robust branching and merging capabilities. Git allows
+developers to work on code offline, create feature branches, and merge changes easily. Git has gained popularity due to its distributed
+nature, speed, and strong branching and merging capabilities. It allows developers to work on projects of all sizes, from small scripts to
+large-scale applications. Additionally, Git is widely supported and has a vast ecosystem of tools and services built around it.
+
+Why is Git Important?
+Git is open source, and there is a vast and active community of users and contributors. This has led to a wide range of tools, services, and
+resources built around Git. Git provides a reliable and efficient way to manage versions of code, reducing the risk of code conflicts and data
+loss. It enables collaboration among developers, making it possible for teams to work on the same project concurrently without interfering
+with each other's work. Git's branching and merging capabilities facilitate the use of different development workflows, such as feature
+branching and release management. Git integrates seamlessly with various development tools and services, including code hosting
+platforms like GitHub, GitLab, and Bitbucket, as well as CI/CD pipelines.
+
+
+INSTALLATION:--
+
+Step 1: Installation: Install Git on your local machine if not already installed
+        SYNTAX:- sudo apt install git-all
+
+step 2: Tell Git who you are
+Set your name and email using git config to identify your commits:
+        SYNTAX:- git config --global user.name "Your Name"
+                 git config --global user.email "your@email.com"
+                 git config --global --list # To check the info you just provided.
+
+step 3: Create a Repository: To start using Git in a project, navigate to the project folder in your terminal and initialize a Git repository: git init
+This will create a hidden .git folder in your project folder on your computer. .git folder is the repository where it stores all the changes you
+make to any files within the project folder.
+
+
+
+GIT WORKFLOW:
+
+Before we start working with Git commands, it is necessary that you understand what it represents.
+
+There are four fundamental elements in the Git Workflow.
+Working Directory,
+Staging Area,
+Local Repository,
+Remote Repository.
+
+If you consider a file in your Working Directory, it can be in three possible states.
+
+1. It can be staged. This means the files with the updated changes are marked to be committed to the local repository but not yet
+committed.
+2. It can be modified. This means the files with the updated changes are not yet stored in the local repository.
+3. It can be committed. This means that the changes you made to your file are safely stored in the local repository.
+   *git add is a command used to add a file that is in the working directory to the staging area.If you need to know exactly what changes
+    you made, you can just type git status and see “Changes to be committed” in green and “Changes not staged for commit” in red.
+    If you want to add every file you change, just type git add --all .
+   * git add .
+      # Adds all the files in the local repository and stages them for commit
+
+
+Before we commit let’s see what files are staged:
+
+   SYNTAX: git status # Lists all new or modified files to be committed.
+
+Commit your staged changes:
+   SYNTAX: git commit -m "commit msg" filename.
+
+
+REMOTE REPOSITORT  in Git:
+
+In Git, a remote repository is a repository that is hosted on a server or a remote location, separate from your local development
+environment. Remote repositories are essential for collaboration, sharing code, and working on projects with distributed teams. Two
+fundamental concepts for working with remote repositories are git clone and git remote add .
+
+1. git clone - Creating a Copy of a Remote Repository
+The git clone command is used to create a copy of a remote Git repository on your local machine. This allows you to start working on a
+project, make changes, and contribute to the repository. Here's how to use it:
+   SYNTAX: git clone repository_url
+After running this command, a copy of the remote repository will be created on your local machine, and you can start working on the project.
+
+2. git push - Pushing Changes to a Remote Repository
+After making changes to your local repository, you may want to share your work with others by pushing your changes to a remote
+repository.
+ 
+     *Pushing to a Remote Repository After Cloning:
+When you've cloned a repository using git clone , you automatically have a remote named origin (by convention) that points to the
+repository you cloned. To push your changes to this remote, use the following command:
+     
+      SYNTAX: git push origin branch_name
+              example: git push origin main
+       branch_name is the name of the branch you want to push. By default, this is often "main" or "master."
+
+3. git remote add - Linking a Remote Repository
+The git remote add command is used to link your local repository to a remote repository. It is commonly used when you want to
+collaborate with others or push your local changes to a remote repository. Here's how to use it:
+
+      SYNTAX: git remote add remote_name repository_url
+              remote_name is a name you choose to represent the remote repository.
+              repository_url is the URL of the remote Git repository.
+In this example, the origin remote is added and linked to the specified repository URL. You can choose any name for the remote, but
+origin is a common convention for the default remote.
+Once you've added a remote, you can use it to fetch changes from the remote repository or push your local changes to it.
+
+
+Pushing to a Remote Repository After Adding a Remote:
+
+If you've added a remote using git remote add , you can push your local changes to that remote using the remote name you specified.
+For example:
+git push remote_name branch_name example : git push my_remote feature-branch
+                                           remote_name is the name of the remote repository you added.
+                                           branch_name is the name of the branch you want to push.
+
+
+
+GIT BRANCHING:
+ 
+Branching allows teams of developers to easily collaborate inside of one central code base. When a developer creates a branch, the
+version control system creates a copy of the code base at that point in time. Changes to the branch don't affect other developers on the
+team.
+
+1. Creating a New Branch:
+To create a new branch, use the git branch command:
+       SYNTAX: git branch new_branch_name
+This creates a new branch but does not switch to it. To switch to the new branch, use git checkout or git switch :
+git checkout new_branch_name or git switch new_branch_name
+example : git branch feature-branch
+          git checkout feature-branch.
+
+2. Creating and Switching to a New Branch in One Step
+You can create and switch to a new branch simultaneously using the -b flag with git checkout or git switch.
+        SYNTAX: git checkout -b new_branch_name # or git switch -c new_branch_name.
+
+3 . Viewing Branches
+You can list all the branches in your Git repository using the command: git branch
+
+
+4. Deleting a Branch
+Once a branch's changes have been merged, you can delete the branch using: git branch -d branch_name
+Force delete the specified branch, even if it has unmerged changes. This is the command to use if you want to permanently throw away all
+of the commits associated with a particular line of development. git branch -D branch_name
+The previous commands will delete a local copy of a branch. The branch may still exist in remote repos. To delete a remote branch execute
+the following.
+        SYNTAX: git push origin --delete <branch-name>
+
+5. Checkout the Remote tracking branches in the local git repository:
+In Git, remote tracking branches, also known as remote branches or remote tracking references, are references to the state of branches on
+a remote repository. These branches allow you to see and work with the changes on the remote repository locally.
+
+List Remote Tracking Branches:
+
+To list all the remote tracking branches in your local repository, you can use the git branch command with the -r or --remotes option: git branch -r
+This will display a list of remote tracking branches, typically in the format origin/branch_name , where origin is the name of the remote
+and branch_name is the name of the remote branch.
+
+Check Out a Remote Tracking Branch:
+
+To check out a specific remote tracking branch and create a local tracking branch based on it, you can use the git checkout command followed by the branch name. For example: git checkout -t origin/branch_name
+This command checks out the remote tracking branch origin/branch_name and creates a corresponding local branch that tracks it.
+
+
+GIT BRANCHING STRATAGIEs :
+
+1. Git merge:
+Git merging is the process of combining changes from one branch into another branch. It's a fundamental operation in Git and is typically
+used to integrate new features, bug fixes, or changes from feature branches into the main branch or other relevant branches.
+Git rebase is a Git operation that allows you to integrate changes from one branch into another by moving or applying a series of commits
+onto a different base commit. In other words, it helps you incorporate the changes from one branch onto another branch while maintaining a
+linear and cleaner commit history. It essentially rewrites the commit history of a branch.
+    SYNTAX: git merge< repository url>
+
+2. git fetch:
+git fetch is a Git command used to retrieve changes from a remote repository without merging them. It updates your
+knowledge of the remote branches, allowing you to review the changes before deciding to merge.
+   SYNTAX: git fetch< repository URL>
+
+3. git pull:
+ git pull is a Git command used to update your local repository with changes from a remote repository. It combines
+two actions: fetching changes and merging them into your current branch.
+   SYNTAX: git pull origin branch_name
+
+
+
+
+
