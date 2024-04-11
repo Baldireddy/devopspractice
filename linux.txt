@@ -1,0 +1,175 @@
+Introduction to Linux:-
+
+Linux is a widely-used open-source operating system, similar to Windows, Mac, and Android. It shares similarities with Unix, another operating system known for its commercial use.
+
+Linux Distribution:-
+Linux distribution is an operating system that is made up of a collection of software based on Linux kernel or you can say distribution contains the Linux kernel and supporting libraries and software.
+some of the popular Linux distributions are:
+1.Ubuntu:-
+Ubuntu is known for its user-friendly approach and is based on Debian. It has both Long-Term Support (LTS) and regular release versions. Ubuntu is often used for desktops and servers.
+
+2.Debian:-
+Debian is the foundation for many other Linux distributions, including Ubuntu. It's known for its stability and commitment to free and open-source software.
+
+3.CentOS:-
+CentOS is a free, community-supported version of Red Hat Enterprise Linux (RHEL). It is often used for servers and provides a stable platform with long-term support.
+
+4.Red Hat Enterprise Linux (RHEL):-
+RHEL is a commercial Linux distribution with a focus on enterprise use. It provides premium support, certifications, and additional tools for businesses.
+
+5.Fedora:-
+Fedora is a community-driven distribution sponsored by Red Hat. It's known for adopting newer software and technologies more quickly than RHEL.
+
+6.openSUSE:-
+openSUSE offers both a community version (openSUSE Leap) and a rolling-release version (openSUSE Tumbleweed). It's known for its robust administration tools.
+
+7.Kali Linux:-
+Kernel is the core of the Linux based operating system. It virtualizes the common hardware resources of the computer to provide each process with its virtual resources.
+ShelI:-
+is an interface among the kernel and user. It can afford the services of kernel. It can take commands through the user and runs the functions of the kernel. The shellis available in distinct types of OSes. These operating systems are categorized into two different types, which are the graphical shells and command-line shells.
+
+The graphical line shells facilitate the graphical user interface, while the command line shells facilitate the command line interface.
+
+There are a few types of these shells which are categorized as follows:
+Korn shell
+Bourne shell
+C shell
+POSIX shell
+
+Hardware Layer:
+This layer consists all peripheral devices like RAM/ HDD/ CPU etc.
+
+System Utility:
+It provides the functionalities of an operating system to the user.
+
+
+What is the Linux Command Line?
+The Linux command line allows the user to enter text and have the system carry out specific instructions. When the user types a command into the OS, it appears on thescreen and is processed immediately.
+
+HOW TO USE THE COMMAND LINE?
+First, press the “CTRL” key plus “ALT” and “T” keys simultaneously to bring up the Linux command line and a command tool/command prompt. When you open the command line, you may get a prompt similar to (user@system:$), which indicates that the system is prepared to carry out your orders.
+
+
+IMPORTANT LINUX COMMANDS:-
+
+1.
+uname -a
+: Display Linux system information 
+2.
+uname -r
+: Display kernel release information 
+3.
+lsb_release -a
+: Show which version of ubuntu installed 
+4.
+uptime
+: Show how long the system has been running + load 
+5.
+hostname
+: Show system host name 
+6.
+hostname -I
+: Display the IP addresses of the host
+7.
+date:
+Show the current date and time 
+8.
+cal:
+Show this month's calendar 
+9.
+w:
+Display who is online 
+10.
+whoami:
+Who you are logged in as
+11.
+whereis:
+used to find the location of source/binary file of a command and manuals sections for a specified file in Linux system
+12.
+id
+: Display the user and group ids of your current user. 
+13.
+last:
+Display the last users who have loggedonto the system. 
+14.
+who:
+Show who is logged into the system
+15.
+clear
+: clear the terminal screen
+16.
+pwd:
+The current directory’s location can be viewed using this method. Syntax: pwd
+17.
+mkdir :
+To make a new directory underneath an existing one. Syntax: mkdir <directory name> 
+18.
+touch command:
+Used for making a bunch of new, empty files. Syntax: touch <file name> and touch <file 1> <file 2>….<file n> 
+19.
+cd -
+Changes the current working directory in the command line console
+20.
+cd ..
+To go up one level of the directory tree. (Change into the parent directory.)
+21.
+exit -
+Exits out of the current program, terminates the current command line terminal, or logs youout of a Unix network depending on the context.
+22.
+ls:
+It will show the full list or content of your directory. Just type
+ls
+and press the enter key.
+23.
+ls -
+l: Display all information About files/directory or To show long listing information about the file/directory.
+24.
+ls -lh
+: (h stands for human readable form) : To display file size in easy-to-read format. i.e i.e M for MB, K for KB, G for GB.
+25.
+ls -lt: To sort the file names displayed in the order of last modification time.
+26.
+ls -ltr: To sort the file names in the last modification time in reverse order. This will show the last edited file in the last line which will be handy when the listing goes beyond a page.
+27.
+ls -a
+: To show all the hidden files in the directory, use ‘-a option’. Hidden files in Unix starts with ‘.’ in its file will show all the files including the ‘.’ (current directory) and ‘..’ (parent directory).
+28.
+ls -al:
+List all files in a long listing (detailed)format.
+29.
+cat:
+View the contents of file
+30.less:- Browse through a text file 
+31.more:- 
+32.head:-Display the first 10 lines of file 
+33.tail:-Display the last 10 lines of file
+34.rm:- Remove (delete) file
+35.rm -f:-Force removal of file without promptingfor confirmation
+36.rm -rf:-Forcefully remove directory recursively
+37.rmdir:-Delete a file or files
+38.cp file1 file2:-Copy file1 to file2
+39.mv file1 file2:- Rename or move file1 to file2. If file2 is an existing directory, move file1 into directory file2
+40.history:- see history commands
+41.
+echo:
+The
+echo
+command does one simple job: it prints to the output the argument passed to it
+. (
+echo *
+- echo the files in the current folder)
+42.
+wc - print newline, word, and byte counts for each file(wc filename)-lines,words,bytes…. wc -l, wc -w
+43.
+sort
+: The
+sort
+command helps you sort them by name , Use the
+r
+option to reverse the order, sort -nr for numbers in reverse 
+44.
+diff
+: will process the files and will tell you what's the difference bw 2 files.
+45.
+grep:
+The grep filter searches a file for a particular pattern of characters, and displays all lines that contain that pattern. The pattern that is searched in the file is referred to as the regular expression (grep stands for global search for regular expression and print out).
