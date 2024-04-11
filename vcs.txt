@@ -1,0 +1,26 @@
+Version Control System(VCS):-
+A Version Control System (VCS) is a software tool that helps developers track and manage changes to their source code and other files. It allows multiple developers to collaborate on a project by keeping track of revisions, facilitating collaboration, and providing a history of changes made to the codebase. VCS systems are essential for maintaining code integrity and enabling efficient teamwork.
+
+Types of Version Control Systems:-
+1.local version control system
+2.central version control system
+3.distributed control system
+
+Local Version Control Systems:-
+Local Version Control Systems (LVCS), also known as "single-user" or "standalone" version control systems, are simple version control solutions that are primarily designed for individual developers or small teams working on a single computer or local network. LVCS systems are limited in their capabilities and are not suitable for collaborative or distributed development scenarios.
+
+
+
+Centralized Version Control Systems:
+In a centralized VCS, there is a single, centralized repository that stores all versions of files and their history. Developers clone the repository to work on files and then commit changes back to the central server.
+The most obvious is the single point of failure that the centralized server represents. If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they’re working on. If the hard disk the central database is on becomes corrupted, and proper backups haven’t been kept, you lose absolutely everything.
+
+
+Distributed Version Control Systems:-
+In Distributed VCS, every contributor has a local copy or “clone” of the main repository i.e. everyone maintains a local repository of their own which contains all the files and metadata present in the main repository. They can update their local repositories with new data from the central server by an operation called “pull” and affect changes to the main repository by an operation called “push” from their local repository.
+All operations (except push & pull) are very fast because the tool only needs to access the hard drive, not a remote server. Hence, you do not always need an internetconnection.
+Committing new change-sets can be done locally without manipulating the data on the main repository. Once you have a group of change-sets ready, you can push them al at once.
+Since every contributor has a full copy of the project repository, they can share changes with one another if they want to get some feedback before affecting changes in the main repository.
+If the central server gets crashed at any point of time, the lost data can be easily recovered from any one of the contributor’s local repositories.
+
+
