@@ -1,0 +1,48 @@
+Physical Servers:-
+Physical servers are the actual, tangible hardware devices that are commonly used to run computer applications. They consist of components such as processors, memory (RAM), storage drives, and network interfaces.
+Physical servers are often used in traditional IT environments where each server is dedicated to running a specific application or service.
+A physical server is used to run a single instance of an OS. It runs Windows, Linux or another OS and, very often, it's used to run a single application.
+
+
+Virtual Servers:-
+Virtual servers, also known as virtual machines (VMs), are software-based representations of physical servers. They run on physical server hardware but behave like independent servers.
+Virtualization technology allows multiple virtual servers to run on a single physical server, each with its own operating system and applications.
+Virtual servers offer flexibility, resource isolation, and efficient hardware utilization.
+
+
+What is virtualization?
+Consider a typical company server: it could be more utilized, running far less than its total capacity. This is where virtualization steps in, creating several ‘virtual’ servers within the ‘physical’ one, each operating independently with its system and applications. It’s like turning a single-stage theater into a multiplex cinema; you’re using the same space but running different shows simultaneously.
+Virtualization software, known as a hypervisor, manages and allocates resources to virtual servers, ensuring they operate independently and securely.
+It allows businesses to reduce the number of physical servers, resulting in lower hardware costs, reduced energy consumption, and simplified maintenance.
+
+
+Hypervisor:-
+A hypervisor is a software layer that sits between the physical hardware and virtual servers. It manages the creation, execution, and monitoring of virtual machines.
+There are two types of hypervisors:
+ Type 1 (bare-metal) and Type 2 (hosted). Type 1 hypervisors run directly on the hardware (e.g., VMware ESXi) while
+ Type 2 hypervisors run on top of an existing operating system (e.g., VMware Workstation).
+Hypervisors allocate physical resources (CPU, memory, storage) to virtual servers and ensure they run efficiently and securely.
+
+
+What is Cloud Computing?
+cloud computing is the delivery of computing services, including servers, storage, databases, networking, software, analytics, and intelligence, over the Internet or “the cloud.” This technology is designed to provide accessible, scalable access to applications and resources without the user needing advanced infrastructure management.
+The components of cloud computing can be broadly categorized into three models — Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS). Each model offers varying levels of control, flexibility, and management, catering to diverse business needs.
+
+
+IaaS vs PaaS vs SaaS:-
+
+1.IaaS (Infrastructure as a Service):-
+IaaS provides the fundamental building blocks of computing infrastructure over the cloud. It offers virtualized computing resources, such as virtual machines (VMs), storage, and networking, on a pay-as-you-go basis.
+Users of IaaS are responsible for managing and configuring the operating systems, applications, and data within the provided infrastructure. They have control over the virtualized resources.
+Examples of IaaS providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+
+2.PaaS (Platform as a Service):-
+PaaS is one level of abstraction higher than IaaS. It provides a platform and environment for developers to build, deploy, and manage applications without worrying about underlying infrastructure.
+With PaaS, developers focus on writing code and managing applications, while the cloud provider handles the infrastructure, runtime, and scaling.
+PaaS is suitable for developers who want to streamline application development and deployment processes.
+Examples of PaaS offerings include Google App Engine, Heroku, and Microsoft Azure App Service.
+
+3.SaaS (Software as a Service):-
+SaaS delivers fully functional software applications over the internet. Users access these applications via web browsers without needing to install or maintain any software locally.
+SaaS applications are typically hosted, maintained, and updated by the SaaS provider, relieving users of software management tasks.
+Examples of SaaS applications range from office productivity tools like Google Workspace (formerly G Suite) to customer relationship management (CRM) software like Salesforce and collaboration platforms like Slack.
