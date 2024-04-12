@@ -1,1 +1,3 @@
 we have to learn about sonar qube in detail
+
+it is about detail structure of dev
