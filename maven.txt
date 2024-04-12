@@ -1,0 +1,390 @@
+BUILD AUTOMATION TOOL
+
+
+Build automation is the process of automating the creation of a software build and the associated processes including: compiling computer source code into binary codepackaging binary code, and running automated tests.
+
+A build tool is a software tool that automates and manages the process of compiling, testing, packaging, and deploying a software project. Build tools are primarily used in software development to streamline the build process, making it more efficient, repeatable, and less error-prone.
+
+Common build tools in the software development world include Apache Maven, Gradle, Ant, and make. The choice of build tool depends on the project's requirements, the programming language used, and the preferences of the development team.
+
+Here are the key reasons why build tools are essential in software development:
+1.Automating Repetitive Tasks:
+Build tools automate repetitive and manual tasks involved in the software build process. This includes compiling source code, running tests, packaging the applicationand managing dependencies. By automating these tasks, developers save time and reduce the risk of human error.
+2.Dependency Management:
+Build tools handle the management of project dependencies, such as libraries and frameworks. They can automatically download and manage the required dependencies, making it easy to keep software up to date and ensuring that the correct versions are used.
+3.version Control Integration: 
+Build tools can be integrated with version control systems (e.g., Git), allowing developers to trigger builds automatically whenever changes are committed to the repository. This integration ensures that the latest code is always built and tested.
+4.Parallel Execution:
+Build tools can execute build tasks in parallel, taking advantage of multi-core processors and speeding up the build process. This is especially important for large and complex projects.
+5.Efficient Testing:
+Build tools often include test automation capabilities. They can run unit tests, integration tests, and other types of tests, making it easier to identify and fix issues early in the development process.
+6.Reproducibility:
+Build tools ensure that builds are reproducible. This means that anyone with access to the same source code and build configuration can recreate the exact same build.
+7.Continuous Integration and Deployment (CI/CD):
+Build tools are fundamental components of CI/CD pipelines. They enable the automation of building, testing, and deploying software, allowing for faster and more reliable software delivery.
+8.Multi-Environment Support:
+Build tools can be configured to build the application for different environments, such as development, testing, and production. This ensures that the application is packaged appropriately for its intended use.
+
+
+What is Maven and Why it is used?
+
+Maven is a popular and widely-used build automation and project management tool primarily used in Java development, although it can be adapted for other programming languages as well based on POM (project object model).
+Maven's Objectives:
+
+Maven's primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time. In order to attain this goal, Maven deals with several areas of concern:
+     Making the build process easy
+     Providing a uniform build system
+     Providing quality project information
+     Encouraging better development practice
+
+
+Maven architecture diagram:
+Maven architecture illustrates how to create and generate a report in accordance with the requirements and to carry out lifecycles, phases, goals, plugins, and other tasks starting at the very start. It includes plugin jar, plugin surefire, and plugin release. The diagram below shows the Maven architecture.
+
+
+Repository in Maven:
+
+There are three types of maven repositories:-
+1. Local Repository:
+The developer's computer serves as the project's local repository and is where all project files are stored. The dependency jars are all stored in this repository.
+2. Central Repository:
+When dependencies are required but cannot be found in the local repository, the Maven community steps in to serve as the central repository. When necessary, Maven downloads the dependencies from this location.
+3. Remote Repository:
+When Maven needs to download dependencies, it uses the repository located on a web server, which is referred to as the remote repository. When something from the remote repository is needed, it is first downloaded to the local repository and then used.
+
+
+
+Maven Build Lifecycle And Phases:
+
+Maven is based around the central concept of a build lifecycle. What this means is that the process for building and distributing a particular artifact (project) is clearly defined.
+There are three built-in build lifecycles: default, clean and site. 
+The default lifecycle handles your project deployment, 
+The clean lifecycle handles project cleaning, 
+The sit elifecycle handles the creation of your project’s web site.
+
+There are total of 30 phases defined by maven. Default lifecycle has 23 phases, clean has 3 and site has 4 phases
+
+DEFAULT LIFECYCYLES:
+
+The default lifecycle handles project deployments. A lifecycle can be divided into different steps which are called phases. The default lifecycle contains 23 phases which follow.
+
+1.
+validate: Validates the project is correct and all necessary information is available.
+2.
+initialize: Initializes the build state, for example, by creating directories and setting up properties.
+3.
+generate-sources: Generates any source code required by the project.
+4.
+process-sources: Processes the source code, for example, by compiling it.
+5.
+generate-resources: Generates any additional resources required by the project.
+6.
+process-resources: Processes and copies resources into the target directory.
+7.
+compile: Compiles the source code.
+8.
+process-classes: Post-processes the compiled files, for example, to perform bytecode enhancement.
+9.
+generate-test-sources: Generates test source code.
+10.
+process-test-sources: Processes test source code.
+11.
+generate-test-resources: Generates test resources.
+12.
+process-test-resources: Processes and copies test resources into the target directory.
+13.
+test-compile: Compiles the test source code.
+14.
+process-test-classes: Post-processes the compiled test files.
+15.
+test: Runs tests using a suitable testing framework.
+16.
+prepare-package: Performs any necessary operations before packaging.
+17.
+package: Packages the compiled code into a distributable format, e.g., JAR or WAR.
+18.
+pre-integration-test: Performs actions before integration tests are run.
+19.
+integration-test: Runs integration tests.
+20.
+post-integration-test: Performs actions after integration tests are run.
+21.
+verify: Checks the results of integration tests to ensure quality criteria are met.
+22.
+install: Installs the package into the local repository, making it available to other projects.
+23. 
+deploy: Copies the final package to a remote repository for sharing with other developers and projects.
+
+
+It's important to note that not all phases in the default life cycle are executed in every build. The life cycle is typically executed up to a
+specific phase, depending on the goals and commands issued. For example, running the mvn compile command will execute the life cycle
+up to the compile phase. Maven's intelligent defaults ensure that the phases are executed in the correct order. Developers can also bind
+their custom goals and plugins to specific phases.
+
+
+
+1. Clean
+This initial phase ensures a clean slate by removing any previously generated build artifacts. It’s a helpful step when you want to start fresh.
+During the clean phase, Maven performs several critical actions:
+Deletes the target directory: This directory holds all the build output from previous runs, including compiled code, JARs, and other generated files. Removing it ensures you’re working with a clean project directory.
+Cleans up any resources generated during the previous build, such as temporary files or cached data.
+Prepares the project for a fresh build, erasing any remnants of previous builds.
+Executing this phase is as simple as running the following command
+        SYNTAX: mvn clean
+
+
+
+
+2. Validate
+Before diving into the build, Maven validates your project’s structure and configuration. This phase helps you catch early mistakes in your
+project setup.
+During the validate phase, Maven performs various checks, including
+Verifying that your project’s `pom.xml` file is valid and well-formed XML.
+Ensuring that the project’s dependencies are available and correctly specified.
+Validating any custom configuration or settings you’ve added to your project.
+
+This phase is particularly useful for detecting issues in your project’s metadata and configuration before they cause problems during the
+build process.
+To run the validate phase, use the following command
+        SYNTAX: mvn validate
+
+
+
+3. Compile
+In the compile phase, your source code is compiled into bytecode. This is where your Java code gets transformed into .class files, making it
+ready for further processing.
+During compilation, Maven leverages the Java Compiler (javac) to translate your human-readable source code into bytecode that the Java Virtual Machine (JVM) can execute. This bytecode is then packaged into JAR files or other formats during later phases.
+Compilation is a critical step because it checks your code for syntax errors and ensures that your project’s source code is ready for testing
+and packaging.
+To run the compile phase, use the following command
+       SYNTAX: mvn compile
+
+
+4. test
+The test phase is where Maven runs your unit tests. These tests validate that your code behaves as expected, helping you catch bugs early
+in development. Maven uses testing frameworks like JUnit to execute these tests.
+
+During this phase, Maven
+
+Compiles your test source code and application source code (which was already compiled in the previous phase).
+Executes the tests, capturing and reporting test results.
+Stops the build if any tests fail, ensuring that your code meets the defined quality standards.
+
+To run the test phase, use the following command:
+      SYNTAX: mvn test
+
+
+5. Package
+After successful compilation and testing, Maven packages your code into a distributable format. The output could be a JAR, WAR, or any
+other format based on your project’s configuration. This phase creates the deployable artifact for your application.
+
+The package phase is critical because it prepares your application for distribution or deployment. Depending on your project type, the
+resulting artifact might be a standalone executable JAR, a web application archive (WAR), or a different format tailored to your project’s
+needs.
+
+To run the package phase, use the following command:
+      SYNTAX: mvn package
+
+
+6. Verify
+In the verify phase, Maven checks that the package created in the previous phase meets quality criteria. This can include code quality
+checks, code coverage analysis, and more. Plugins like SonarQube or JaCoCo are often used for these checks.
+
+During this phase, Maven typically performs the following verifications
+
+Code quality checks using tools like SonarQube or Checkstyle.
+Code coverage analysis to determine how much of your codebase is covered by tests.
+Ensuring that your project adheres to defined quality standards and best practices.
+
+To run the verify phase, use the following command:
+     SYNTAX: mvn verify
+
+
+7. Install
+Once your code has passed all previous phases, it’s time to install it locally. Maven places the built artifact into your local repository, making
+it available for other projects on your local machine. This allows you to use your project as a dependency in other projects.
+
+The install phase is useful for creating a local repository of artifacts that can be reused in other Maven projects on the same machine. It
+ensures that your project’s built artifacts are easily accessible to other projects without needing to deploy them to a remote repository.
+
+To run the install phase, use the following command:
+     SYNTAX: mvn install
+
+
+8. Deploy
+Finally, if your project is ready for release, the deploy phase comes into play. This phase deploys the artifact to a remote repository,making it accessible to other developers and projects. Remote repositories could be internal company repositories or public repositories like Maven Central.
+
+The deployment phase typically involves
+
+Uploading your project’s artifacts to a remote
+Making these artifacts available to other developers and projects.
+Ensuring that the artifacts are properly versioned and can be easily referenced by other projects as dependencies.
+
+To run the deploy phase, use the following command
+     SYNTAX: mvn deploy
+
+
+
+MAVEN INSTALIZATION:
+
+ Step 1: Download the JDK Binaries
+
+Go to the URL: JDK 13 Releases: Copy the download link for Linux/x64 build. Then use the below command to download and extract it.
+
+1. $ wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x6
+2. $ tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
+3. $ mv jdk-13.0.1 /opt/.
+
+
+I have moved JDK to /opt, you can keep it anywhere in the file system.
+NOTE: Find latest JDK Release and replace with what ever version required
+
+
+INSTALLATION  MAVEN ON LINUX/UBUNTU
+
+We will install Maven in a similar way that we have installed JDK in the Linux system.
+
+ Step 2: Download the Maven Binaries:
+
+Go to the URL: Maven – Download Apache Maven: Copy the link for the “Binary tar.gz archive” file. Then run the following commands to
+download and untar it.
+
+1. $ wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz.
+2. $ tar -xvf apache-maven-3.9.5-bin.tar.gz.
+3. $ mv apache-maven-3.9.5 /opt/.
+
+ Step 3: Setting JAVA_HOME and M2_HOME and Path Variables:
+
+a. Open /etc/profile.d/maven.sh
+   $ sudo vi /etc/profile.d/maven.sh.
+b. Edit the file by adding the following to it:
+   1. JAVA_HOME='/opt/jdk-13.0.1'
+   2. PATH="$JAVA_HOME/bin:$PATH"
+   3. export PATH
+   4. M2_HOME='/opt/apache-maven-3.9.5'
+   5. PATH="$M2_HOME/bin:$PATH"
+   6. export PATH.
+c. Make the script executable:
+   1. sudo chmod +x /etc/profile.d/maven.sh or sudo chmod 777 /etc/profile.d/maven.sh.
+
+ Step 4: Verify the JAVA & Maven installation:
+ 
+  1. $ java -version
+  2. openjdk version "13.0.1" 2019-10-15
+  3. OpenJDK Runtime Environment (build 13.0.1+9)
+  4. OpenJDK 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing).
+                     (or)
+
+  1. $ mvn -version
+  2. Apache Maven 3.9.5 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+  3. Maven home: /opt/apache-maven-3.9.5
+  4. Java version: 13.0.1, vendor: Oracle Corporation, runtime: /opt/jdk-13.0.1
+  5. Default locale: en, platform encoding: UTF-8
+  6. OS name: "linux", version: "4.15.0-47-generic", arch: "amd64", family: "unix".
+
+
+
+
+BUILDING THE OLD WAY
+
+Let’s consider we have to build a web application. We might have several dependencies such as web mvc, junits, etc. We need to manage
+all the dependencies, build WAR files, deploy, etc. All these steps take a lot of time.
+Type Below Command:
+  mvn archetype:generate -DgroupId=org.batch.maven -DartifactId=devops-mvn -D-Dpackage=org.batch.maven -Dversion=1.0-SNAPSHOT.
+
+As Maven follows convention over configuration. Therefore it defines some defaults (can be overridden):
+1. Src files should be in src/main/java
+2. Test files should be in src/test/java
+3. pom.xml should be in the root folder.
+
+
+When you run any maven command, the first thing it looks for is pom.xml.
+Maven build lifecycle is a set of phases that is executed when a maven build is run.
+   
+     SYNTAX: mvn validate.
+
+Right now we do not have any compiled files. To compile src code, try:
+   
+     SYNTAX: mvn compile.
+
+You will see that a new target folder is created with src files compiled in it.
+
+The test phase is where Maven runs your unit tests. Maven uses testing frameworks like JUnit to execute these tests.
+
+     SYNTAX: mvn test
+
+After successful compilation and testing, Maven packages your code into a distributable format. The output could be a JAR, WAR, or any
+other format based on your project’s configuration.
+
+To run the package phase, use the following command:
+     SYNTAX: mvn package.
+
+We can observe here, one .jar file is generated.
+
+In the install phase, maven first validates, compiles (src and test classes), packages, verifies, and then install the package into the local
+repository, for use as a dependency in other projects locally.
+
+To delete the compiled classes, try:
+ 
+    SYNTAX: mvn clean.
+
+This will delete the target folder altogether.
+
+
+
+                                               --- POM: PROJECT OBJECT MODEL : ---
+
+
+Understanding the POM Structure:
+A POM file is named “pom.xml” and is typically located at the root directory of your Maven project. The POM XML structure consists of
+nested elements that define various aspects of your project, such as its dependencies, build configurations, and more.
+
+A basic POM file looks like this:
+
+1. <project xmlns="http://maven.apache.org/POM/4.0.0"
+2. xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+3. xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+4. <modelVersion>4.0.0</modelVersion>
+5.
+6. <!-- Basic project information -->
+7. <groupId>com.example</groupId>
+8. <artifactId>my-app</artifactId>
+9. <version>1.0-SNAPSHOT</version>
+10. <packaging>jar</packaging>
+11.
+12. <!-- Project dependencies -->
+13. <dependencies>
+14. <!-- Add your dependencies here -->
+15. </dependencies>
+16.
+17. <!-- Build configuration -->
+18. <build>
+19. <!-- Add build configuration here -->
+20. </build>
+21. </project>.
+
+
+Key Elements of a POM
+Here are some important POM elements:
+
+1. <groupId> : A unique identifier for your project's group or organization. It follows a reverse domain name convention (e.g.,"com.example").
+
+2. <artifactId> : A unique identifier for your project within the group. It is usually a simple, descriptive name (e.g., "my-app").
+
+3. <version> : The version of your project. Maven supports versioning schemes like "1.0.0", "1.0-SNAPSHOT", etc.
+
+4. <packaging> : The packaging type of your project. Common values are "jar", "war", and "pom".
+
+5. <dependencies> : A list of dependencies your project relies on. Maven will automatically download and manage these dependencies.
+
+6. <build> : The build configuration for your project, including plugins and other settings.
+
+
+
+
+***Must follow References: Maven – POM Reference
+What is Maven, and the importance of pom.xml.
+An In-Depth Look at the Maven Project Object Model (POM)
+
+
+
